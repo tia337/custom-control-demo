@@ -1,0 +1,26 @@
+<div [formGroup]="form">
+  <div>
+    <label for="name">Name:</label>
+    <input name="name" formControlName="name" />
+    <p *ngIf="name && name.invalid && name.dirty && name.touched">
+      Name is required
+    </p>
+  </div>
+  <div>
+    <label for="email">Email:</label>
+    <input name="email" formControlName="email" />
+    <p *ngIf="email && email.invalid && email.dirty && email.touched">
+      Email is required
+    </p>
+  </div>
+  <div class="ml-3">
+    <label for="customControl">Custom control:</label>
+    <app-custom-control formControlName="customControl"></app-custom-control>
+  </div>
+</div>
+
+<button (click)="submit()">Submit</button>
+
+<div *ngIf="form.valid" class="form-value">
+  {{ form.value | json }}
+</div>
