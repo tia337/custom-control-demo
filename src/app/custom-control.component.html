@@ -1,12 +1,12 @@
 <div [formGroup]="form">
   <div class="ml-3">
     <label for="foo">Foo:</label>
-    <input name="foo" formControlName="foo" [disabled]="disabled" />
+    <input name="foo" formControlName="foo" />
     <p *ngIf="foo && foo.invalid && foo.touched">Foo is required</p>
   </div>
   <div class="ml-3">
     <label for="bar">Bar:</label>
-    <input name="bar" formControlName="bar" [disabled]="disabled" />
+    <input name="bar" formControlName="bar" />
     <p *ngIf="bar && bar.invalid && bar.touched">Bar is required</p>
   </div>
 </div>

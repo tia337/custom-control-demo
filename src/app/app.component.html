@@ -2,16 +2,12 @@
   <div>
     <label for="name">Name:</label>
     <input name="name" formControlName="name" />
-    <p *ngIf="name && name.invalid && name.dirty && name.touched">
-      Name is required
-    </p>
+    <p *ngIf="name && name.invalid && name.touched">Name is required</p>
   </div>
   <div>
     <label for="email">Email:</label>
     <input name="email" formControlName="email" />
-    <p *ngIf="email && email.invalid && email.dirty && email.touched">
-      Email is required
-    </p>
+    <p *ngIf="email && email.invalid && email.touched">Email is required</p>
   </div>
   <div class="ml-3">
     <label for="customControl">Custom control:</label>

@@ -1,18 +1,11 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, UntypedFormGroup, Validators } from '@angular/forms';
+import {
+  FormControl,
+  FormGroup,
+  UntypedFormGroup,
+  Validators,
+} from '@angular/forms';
 import { CustomControl } from './custom-control.component';
-
-export function markAsTouchedAndDirty(form: UntypedFormGroup): void {
-  Object.keys(form.controls).forEach((field) => {
-    const control = form.get(field);
-    if ((control as UntypedFormGroup).controls) {
-      markAsTouchedAndDirty(control as UntypedFormGroup);
-    } else {
-      control?.markAsTouched();
-      control?.markAsDirty();
-    }
-  });
-}
 
 @Component({
   selector: 'my-app',
@@ -46,7 +39,7 @@ export class AppComponent {
 
   submit(): void {
     if (this.form.invalid) {
-      markAsTouchedAndDirty(this.form);
+      this.form.markAllAsTouched();
 
       return;
     }
